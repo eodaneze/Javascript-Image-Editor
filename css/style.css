@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,100;1,200;1,300;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #E3F2FD;
+}
+.container .disable :where(.editor-panel, .reset-filter, .save-img){
+    opacity: 0.6;
+    pointer-events: none;
+}
+.container{
+    width: 850px;
+    background-color: #fff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    padding: 30px 35px 35px;
+}
+.container h2{
+    font-size: 22px;
+    font-weight: 500;
+}
+.container .wrapper{
+    display: flex;
+    margin: 20px 0;
+    min-height: 335px;
+}
+.wrapper .editor-panel{
+    padding: 15px 20px;
+    width: 280px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.editor-panel .title{
+    display: block;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+.editor-panel .options, .controls{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.editor-panel button{
+    height: 40px;
+    font-size: 14px;
+    color:#6C757D ;
+    margin-bottom: 8px;
+    background-color: white;
+    border: 1px solid #aaa;
+}
+.editor-panel button:hover{
+    background-color: #f5f5f5;
+}
+.editor-panel .filter button{
+   width: calc(100% / 2 - 4px);
+}
+.filter button.active{
+    color: #fff;
+    background-color: #5372F0;
+    border-color: #5372F0;
+}
+.editor-panel .slider{
+    margin-top: 12px;
+}
+.filter .slider .filter-info{
+    display: flex;
+    color: #464646;
+    justify-content: space-between;
+    font-size: 14px;
+}
+.filter .slider input{
+    width: 100%;
+    height: 5px;
+    accent-color: #5372f0;
+}
+.editor-panel .rotate{
+    margin-top: 17px;
+}
+.editor-panel .rotate button{
+    width: calc(100% / 4 - 3px);
+}
+.rotate button:nth-child(3),
+.rotate button:nth-child(4){
+    font-size: 18px;
+}
+.wrapper .preview-img{
+    flex-grow: 1;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+}
+
+.preview-img img{
+    width: 490px;
+    max-height: 335px;
+    object-fit: contain;
+    height: 100%;
+    
+}
+.controls button{
+    padding: 11px 20px;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: #fff;
+    text-transform: uppercase;
+}
+.container .reset-filter{
+    color: #6C757D;
+    border: 1px solid #6C757D;
+}
+.container .choose-img{
+    background-color: #6C757D;
+    border: 1px solid #6C757D;
+}
+.container .save-img{
+    background-color: #5372F0;
+    border: 1px solid #5372F0;
+}
+
+@media(max-width:760px){
+    .container{
+        padding: 25px;
+    }
+    .container .wrapper{
+        flex-wrap: wrap-reverse;
+    }
+    .wrapper .editor-panel{
+        width: 100%;
+    }
+    .wrapper .preview-img{
+        width: 100%;
+        margin: 0 0 15px;
+        text-align: center;
+    }
+    .filter{
+        width: 100%;
+    }
+}
+
+@media(max-width:500px){
+    .controls button{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .controls .row{
+        width: 100%;
+    }
+    .controls .row .save-img{
+        margin-left: 0px;
+    }
+}
